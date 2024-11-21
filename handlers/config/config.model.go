@@ -7,6 +7,7 @@ type Config struct {
 		Username string `yaml:"username"`
 		Password string `yaml:"password"`
 		Database string `yaml:"database"`
+		Driver string `yaml:"driver"`
 	} `yaml:"database"`
 
 	Base struct {
