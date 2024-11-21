@@ -19,6 +19,9 @@ type Postgres struct {
 func (p *Postgres) GetConnection() error {
 	dsn := fmt.Sprintf("host=%s port=%s user=%s dbname=%s password=%s sslmode=disable",
 		p.Host, p.Port, p.Username, p.Database, p.Password)
+	if p.Connection != nil {
+		return nil
+	}
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		return err
