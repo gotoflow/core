@@ -4,11 +4,11 @@ func GetDatabase(driver string, host string, port int, username string, password
 	switch driver {
 		case "postgres":
 			return &Postgres{
-				Host:     "localhost",
-				Port:     "5432",
-				Username: "postgres",
-				Password: "password",
-				Database: "postgres",
+				Host:     host,
+				Port:     string(port),
+				Username: username,
+				Password: password,
+				Database: database,
 			}
 		default:
 			return nil
