@@ -15,15 +15,16 @@ type DAG struct {
 	Schedule string
 	StartDate *time.Time
 	EndDate *time.Time
-	DeletedAt gorm.DeletedAt `gorm:"index"`
-	CreatedAt time.Time
-	UpdatedAt time.Time
 	Concurrency int
 	MaxActiveTasks int
 	TimeOut int
 	Catchup bool
 	Tags pq.StringArray `gorm:"type:text[]"`
 	Nodes map[string]*Node
+}
+
+func (DAG) TableName() string {
+    return "DAG"
 }
 
 type DagParams struct {

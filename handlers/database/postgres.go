@@ -19,7 +19,6 @@ type Postgres struct {
 func (p *Postgres) GetConnection() error {
 	dsn := fmt.Sprintf("host=%s port=%s user=%s dbname=%s password=%s sslmode=disable",
 		p.Host, p.Port, p.Username, p.Database, p.Password)
-	fmt.Println("Connecting to Postgres %s", dsn)
 	if p.Connection != nil {
 		return nil
 	}
