@@ -20,7 +20,7 @@ type DAG struct {
 	TimeOut int
 	Catchup bool
 	Tags pq.StringArray `gorm:"type:text[]"`
-	Nodes map[string]*Node
+	Nodes map[string]*Node `gorm:"-"`
 }
 
 func (DAG) TableName() string {
