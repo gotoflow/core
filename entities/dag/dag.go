@@ -24,7 +24,7 @@ type DAG struct {
 }
 
 func (DAG) TableName() string {
-    return "DAG"
+    return "dag"
 }
 
 type DagParams struct {
